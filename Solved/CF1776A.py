@@ -3,6 +3,7 @@ cases = input()
 for i in range(int(cases)):
     length = input()
     numbers = list(map(int, input().split()))
+    numbers.insert(0, 0)
     numbers.append(1440)
     count = 0
 
@@ -10,7 +11,7 @@ for i in range(int(cases)):
         if count >= 2:
             print("YES")
             break
-        if numbers[j + 1] - numbers[j] >= 120:
+        elif numbers[j + 1] - numbers[j] >= 120:
             count += int((numbers[j + 1] - numbers[j]) / 120)
             if count >= 2:
                 print("YES")
